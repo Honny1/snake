@@ -11,6 +11,7 @@ ax=ay=15;
 xv=yv=0;
 trail=[];
 tail = 5;
+aa = 0;
 function game() {
     px+=xv;
     py+=yv;
@@ -32,8 +33,9 @@ function game() {
     ctx.fillStyle="lime";
     for(var i=0;i<trail.length;i++) {
         ctx.fillRect(trail[i].x*gs,trail[i].y*gs,gs-2,gs-2);
-        if(trail[i].x==px && trail[i].y==py) {
+        if (trail[i].x == px && trail[i].y == py) {
             tail = 5;
+            endGame();  
         }
 
     }
@@ -42,17 +44,14 @@ function game() {
         trail.shift();
     }
 
-    if(ax==px && ay==py) {
+    if (ax == px && ay == py) {
+        x = 1;
         tail++;
         ax=Math.floor(Math.random()*tc);
         ay = Math.floor(Math.random() * tc);
         aa = tail - 5;
-        if (aa > 0) {
+        if (tail > 5) {
             nwm = "score: " + aa;
-            document.getElementById("nwm").innerHTML = nwm;
-        }
-        else {
-            nwm = "Game Over :'("
             document.getElementById("nwm").innerHTML = nwm;
         }
     }
@@ -73,5 +72,12 @@ function keyPush(evt) {
         case 40:
             xv=0;yv=1;
             break;
+    }
+}
+
+function endGame() {
+    if (aa > 1) {
+        nwm = "Game Over :'("
+        document.getElementById("nwm").innerHTML = nwm;
     }
 }
