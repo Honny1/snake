@@ -35,6 +35,7 @@ function game() {
         if(trail[i].x==px && trail[i].y==py) {
             tail = 5;
         }
+
     }
     trail.push({x:px,y:py});
     while(trail.length>tail) {
