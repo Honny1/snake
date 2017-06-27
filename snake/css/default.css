@@ -1,3 +1,11 @@
 ﻿body {
   background-color:#906090;
 }
+canvas{
+    border:5px solid red; 
+}
+p{
+    color:#0000FF;
+    font-family:fantasy;
+    font-size:30px;
+}

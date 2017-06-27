@@ -45,7 +45,16 @@ function game() {
     if(ax==px && ay==py) {
         tail++;
         ax=Math.floor(Math.random()*tc);
-        ay=Math.floor(Math.random()*tc);
+        ay = Math.floor(Math.random() * tc);
+        aa = tail - 5;
+        if (aa > 0) {
+            nwm = "score: " + aa;
+            document.getElementById("nwm").innerHTML = nwm;
+        }
+        else {
+            nwm = "Game Over :'("
+            document.getElementById("nwm").innerHTML = nwm;
+        }
     }
     ctx.fillStyle="red";
     ctx.fillRect(ax*gs,ay*gs,gs-2,gs-2);
