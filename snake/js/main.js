@@ -77,7 +77,30 @@ function keyPush(evt) {
 
 function endGame() {
     if (aa > 1) {
-        nwm = "Game Over :'("
-        document.getElementById("nwm").innerHTML = nwm;
+        alert();
+        
     }
+}
+
+function alert() {
+    var md = new Windows.UI.Popups.MessageDialog("Game Over :'(\nPlay again");
+    md.commands.append(new Windows.UI.Popups.UICommand("Yes"));
+    md.commands.append(new Windows.UI.Popups.UICommand("No"));
+    md.showAsync().then(
+        function (command) {
+            console.log("pressed: " + command.label);
+            var n = command.label.includes("No");
+            if (true == n) {
+                close();
+            }
+            else {
+                window.open("index.html");
+                //close();
+                
+                
+            }
+        });
+   
+
+   
 }
