@@ -12,6 +12,7 @@ xv=yv=0;
 trail=[];
 tail = 5;
 aa = 0;
+zz = 0;
 function game() {
     px+=xv;
     py+=yv;
@@ -77,8 +78,10 @@ function keyPush(evt) {
 
 function endGame() {
     if (aa > 1) {
-        alert();
-        
+        if (zz == 0) {
+            zz += 1;
+            alert();
+        }
     }
 }
 
@@ -94,8 +97,12 @@ function alert() {
                 close();
             }
             else {
-                window.open("index.html");
-                //close();
+                zz = 0;
+                aa = 0;
+                nwm = "";
+                document.getElementById("nwm").innerHTML = nwm;
+                //window.open("index.html");
+        
                 
                 
             }
