@@ -9,3 +9,7 @@ p{
     font-family:fantasy;
     font-size:30px;
 }
+Alert {
+        height:300px;
+        width:300px;
+    }

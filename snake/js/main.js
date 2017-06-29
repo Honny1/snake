@@ -3,7 +3,9 @@ window.onload=function() {
     canv=document.getElementById("gc");
     ctx=canv.getContext("2d");
     document.addEventListener("keydown",keyPush);
-    setInterval(game,1000/5);
+    setInterval(game, 1000 / 5);
+    var view = Windows.UI.ViewManagement.ApplicationView.getForCurrentView();
+    view.tryResizeView({ height: 500, width: 680 });
 }
 px=py=10;
 gs=tc=20;
@@ -86,9 +88,12 @@ function endGame() {
 }
 
 function alert() {
-    var md = new Windows.UI.Popups.MessageDialog("Game Over :'(\nPlay again");
+    
+   
+    var md = new Windows.UI.Popups.MessageDialog("Play again\nYour score is "+aa,"Game Over :'(");
     md.commands.append(new Windows.UI.Popups.UICommand("Yes"));
     md.commands.append(new Windows.UI.Popups.UICommand("No"));
+    
     md.showAsync().then(
         function (command) {
             console.log("pressed: " + command.label);
@@ -101,13 +106,6 @@ function alert() {
                 aa = 0;
                 nwm = "";
                 document.getElementById("nwm").innerHTML = nwm;
-                //window.open("index.html");
-        
-                
-                
             }
         });
-   
-
-   
 }
