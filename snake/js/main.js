@@ -83,7 +83,6 @@ function endGame() {
         if (zz == 0) {
             zz += 1;
             alert();
-            open("alert.html");
         }
     }
 }
