@@ -5,5 +5,6 @@
 function loadNick() {
     var x = document.getElementById("nick").value;
     document.getElementById("demo").innerHTML = x;
+    console.log("pressed: " + x);
 }
      
